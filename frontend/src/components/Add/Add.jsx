@@ -13,7 +13,7 @@ const Addtodo = () => {
 
     const [todo, setTodo] = useState({
         data: '',
-        status: '',
+        status: Boolean,
     });
 
     const handleChange = (e) => {
@@ -43,8 +43,8 @@ const Addtodo = () => {
                         {/* Course input fields */}
                         <TextField
                             onChange={handleChange}
-                            name="tododata"
-                            label="tododata"
+                            name="data"
+                            label="data"
                             value={todo.data}
                             variant="outlined"
                             fullWidth
@@ -52,9 +52,9 @@ const Addtodo = () => {
                         />
                         <TextField
                             onChange={handleChange}
-                            name="todostatus"
+                            name="status"
                             value={todo.status}
-                            label="Todo Status"
+                            label="status"
                             variant="outlined"
                             fullWidth
                             margin="normal"
