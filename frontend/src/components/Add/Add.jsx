@@ -12,13 +12,13 @@ const Addtodo = () => {
     const navigate = useNavigate();
 
     const [todo, setTodo] = useState({
-        tododata: '',
-        todostatus: '',
+        data: '',
+        status: '',
     });
 
     const handleChange = (e) => {
       const { name, value } = e.target;
-      setCourse({ ...todo, [name]: value }); 
+      setTodo({ ...todo, [name]: value }); 
   };
   
 
@@ -26,14 +26,11 @@ const Addtodo = () => {
 
         axios.post('http://localhost:4002/add', todo) 
             .then(() => {
-                console.log('Course added successfully');
+                console.log('Data added successfully');
                 navigate('/')
-                setTimeout(() => {
-                    alert('Todo added successfully');
-                }, 100); 
             })
             .catch((error) => {
-                console.error('Error adding course:', error);
+                console.error('Error adding data:', error);
             });
     };
 
@@ -48,7 +45,7 @@ const Addtodo = () => {
                             onChange={handleChange}
                             name="tododata"
                             label="tododata"
-                            value={todo.todoname}
+                            value={todo.data}
                             variant="outlined"
                             fullWidth
                             margin="normal"
@@ -56,7 +53,7 @@ const Addtodo = () => {
                         <TextField
                             onChange={handleChange}
                             name="todostatus"
-                            value={todo.todostatus}
+                            value={todo.status}
                             label="Todo Status"
                             variant="outlined"
                             fullWidth
