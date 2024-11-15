@@ -134,6 +134,33 @@ function Home() {
                     </Grid2>
                 ))}
             </Grid2 >
+
+            <Typography
+                variant="h5"
+                sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    textAlign: 'center',
+                    fontWeight: 400,
+                    marginBottom: 2,
+                    marginTop: '80px',
+                    '::before': {
+                        content: '""',
+                        flexGrow: 1,
+                        marginRight: '16px',
+                        borderBottom: '2px solid rgba(0, 0, 0, 0.5)',
+                    },
+                    '::after': {
+                        content: '""',
+                        flexGrow: 1,
+                        marginLeft: '16px',
+                        borderBottom: '2px solid rgba(0, 0, 0, 0.5)',
+                    }
+                }}
+            >
+                Completed List
+            </Typography>
+
         </>
     );
 }
